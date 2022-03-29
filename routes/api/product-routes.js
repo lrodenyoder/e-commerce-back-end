@@ -14,7 +14,6 @@ router.get('/', (req, res) => {
       },
       {
         model: Tag,
-        as: 'product_tags',
       }
     ],
   })
@@ -37,7 +36,6 @@ router.get('/:id', (req, res) => {
        },
        {
          model: Tag,
-         as: "product_tags",
        },
      ],
    })
@@ -54,7 +52,6 @@ router.get('/:id', (req, res) => {
      });
 });
 
-//TO DO: tagIDs not populating
 // create new product
 router.post('/', (req, res) => {
   /* req.body should look like this...
@@ -69,10 +66,12 @@ router.post('/', (req, res) => {
     product_name: req.body.product_name,
     price: req.body.price,
     stock: req.body.stock,
+    category_id: req.body.category_id,
     tagIds: req.body.tagIds
   })
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
+      console.log(product.tagIds);
       if (req.body.tagIds.length) {
         const productTagIdArr = req.body.tagIds.map((tag_id) => {
           return {
@@ -92,7 +91,6 @@ router.post('/', (req, res) => {
     });
 });
 
-//TO DO: ???????
 // update product
 router.put('/:id', (req, res) => {
   // update product data
