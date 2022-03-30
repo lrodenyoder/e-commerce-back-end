@@ -13,7 +13,7 @@
 
   This project uses MySQL2, dotenv, Express and Sequelize to create and maintain a RESTful API for an e-commerce website. 
 
-  [Click Here](https://drive.google.com/) for a video walkthrough on the functionality of the backend.
+  [Click Here](https://drive.google.com/file/d/1EAP3DJEIXQcO-9iLOKfBNvwOF1ZMcjrj/view) for a video walkthrough on the functionality of the backend.
 
 
   ## Installation
